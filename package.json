@@ -1,0 +1,20 @@
+{
+  "name": "next-auth-protection",
+  "version": "0.0.0",
+  "description": "Authentication protection for NextJS pages and routes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llapenna/next-auth-protection.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llapenna/next-auth-protection/issues"
+  },
+  "homepage": "https://github.com/llapenna/next-auth-protection#readme"
+}
