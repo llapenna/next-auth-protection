@@ -29,8 +29,8 @@ class WithAuthProtection {
    * @param redirect Should the function redirect to the given page if the user is not logged in?
    * @returns A new `getServerSideProps` function that checks if the user is logged in. If not, it redirects to the given page.
    */
-  getServerSideProps: GetServerSideProps = (
-    getServerSidePropsArg,
+  public getServerSideProps: GetServerSideProps = (
+    getPropsFunction,
     redirect = true
   ) => {
     return async (context) => {
@@ -46,7 +46,7 @@ class WithAuthProtection {
       }
 
       // User is logged in, continue to the page. Also add the session to the props
-      return getServerSidePropsArg(context, session);
+      return getPropsFunction(context, session);
     };
   };
 
@@ -56,7 +56,7 @@ class WithAuthProtection {
    * @param redirect Should the function redirect to the given page if the user is not logged in?
    * @returns A new `NextApiHandler` function that checks if the user is logged in. If not, it redirects to the given page.
    */
-  api: ApiHandler = (handler, redirect = true) => {
+  public api: ApiHandler = (handler, redirect = true) => {
     return async (req, res) => {
       const session = await this.getSession(req, res);
 
