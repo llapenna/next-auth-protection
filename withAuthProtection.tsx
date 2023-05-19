@@ -74,6 +74,27 @@ class WithAuthProtection {
       handler(req, res, session);
     };
   };
+
+  /**
+   * Higher-order component that returns a new React component that checks if the user is logged in.
+   * @param Component Regular React component, with the addition of a `Session` prop.
+   * @param Fallback Fallback component to render while the session is loading.
+   * @returns A new React component that checks if the user is logged in. If not, it redirects to the given page.
+   */
+  public page: Page = (Component, Fallback) => {
+    return (props) => {
+      const router = useRouter();
+      const { data: session, status } = useSession();
+
+      if (status === "loading") return <Fallback></Fallback>;
+      else if (status === "unauthenticated" || session === null) {
+        router.push(this.to);
+        return null;
+      }
+
+      return <Component {...props} session={session}></Component>;
+    };
+  };
 }
 
 export default WithAuthProtection;
