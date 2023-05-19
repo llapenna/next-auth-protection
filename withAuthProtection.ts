@@ -1,9 +1,8 @@
-import type { AuthOptions } from "next-auth";
 import { getServerSession } from "next-auth";
-import { GetServerSidePropsContext as Context } from "next";
+import type { AuthOptions } from "next-auth";
+import type { GetServerSidePropsContext as Context } from "next";
 
-import { GetServerSideProps } from "./types/getServerSideProps";
-import { ApiHandler } from "./types/apiHandler";
+import type { ApiHandler, GetServerSideProps } from "./types";
 
 class WithAuthProtection {
   /**
