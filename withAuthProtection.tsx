@@ -1,8 +1,11 @@
+import { useRouter } from "next/router";
 import { getServerSession } from "next-auth";
-import type { AuthOptions } from "next-auth";
+import { useSession } from "next-auth/react";
+
+import type { AuthOptions, Session } from "next-auth";
 import type { GetServerSidePropsContext as Context } from "next";
 
-import type { ApiHandler, GetServerSideProps } from "./types";
+import type { ApiHandler, GetServerSideProps, Page } from "./types";
 
 class WithAuthProtection {
   /**
