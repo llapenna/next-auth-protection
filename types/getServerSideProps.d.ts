@@ -1,13 +1,12 @@
-import type { Session } from 'next-auth';
+import type { Session } from "next-auth";
 import type {
   GetServerSidePropsContext as Context,
-  GetServerSidePropsResult as Result,
-  GetServerSideProps as NextGetServerSideProps,
+  GetServerSideProps as ServerProps,
   PreviewData,
-} from 'next/types';
-import type { ParsedUrlQuery } from 'node:querystring';
+} from "next/types";
+import type { ParsedUrlQuery } from "node:querystring";
 
-import type { AnyObject } from './utils';
+import type { AnyObject } from "./utils";
 
 /**
  * Server-side props with `Session` as a second argument.
@@ -20,7 +19,7 @@ type ServerSidePropsWithSession<
   context: Context<Params, Preview>,
   session: Session
   // TODO check this ReturnType
-) => ReturnType<NextGetServerSideProps<Props | {}, Params, Preview>>;
+) => ReturnType<ServerProps<Props | {}, Params, Preview>>;
 
 /**
  * Server-side rendering authentication HOF.
@@ -32,4 +31,4 @@ export type GetServerSideProps = <
 >(
   getServerSideProps: ServerSidePropsWithSession<Props, Params, Preview>,
   redirect?: boolean
-) => NextGetServerSideProps<Props | {}, Params, Preview>;
+) => ServerProps<Props | {}, Params, Preview>;
