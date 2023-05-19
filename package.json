@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/llapenna/next-auth-protection/issues"
   },
-  "homepage": "https://github.com/llapenna/next-auth-protection#readme"
+  "homepage": "https://github.com/llapenna/next-auth-protection#readme",
+  "peerDependencies": {
+    "next": "13.3",
+    "next-auth": "4.22"
+  },
+  "dependencies": {
+    "@types/node": "^20.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
 }
