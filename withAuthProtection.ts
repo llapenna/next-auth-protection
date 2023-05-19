@@ -1,4 +1,6 @@
 import type { AuthOptions } from 'next-auth';
+import { getServerSession } from 'next-auth';
+import { GetServerSidePropsContext as Context } from 'next';
 
 class WithAuthProtection {
   /**
@@ -7,6 +9,16 @@ class WithAuthProtection {
    * @param options Next-Auth options
    */
   constructor(private to: string, private options: AuthOptions) {}
+
+  /**
+   * Fetches the user's session. Server-side only.
+   * @param req `Request` object
+   * @param res `Response` object
+   * @returns Returns a Next-Auth `Session` object or `null`
+   */
+  private getSession(req: Context['req'], res: Context['res']) {
+    return getServerSession(req, res, this.options);
+  }
 
 }
 
