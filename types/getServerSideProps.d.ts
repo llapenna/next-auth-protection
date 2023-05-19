@@ -30,5 +30,6 @@ export type GetServerSideProps = <
   Params extends ParsedUrlQuery = ParsedUrlQuery,
   Preview extends PreviewData = PreviewData
 >(
-  getServerSideProps: ServerSidePropsWithSession<Props, Params, Preview>
+  getServerSideProps: ServerSidePropsWithSession<Props, Params, Preview>,
+  redirect?: boolean
 ) => NextGetServerSideProps<Props | {}, Params, Preview>;

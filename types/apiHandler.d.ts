@@ -19,5 +19,6 @@ type HandlerWithSession<T = any> = (
  * API route handler authentication HOF.
  */
 export type ApiHandler = <T = any>(
-  handler: HandlerWithSession<T>
+  handler: HandlerWithSession<T>,
+  redirect?: boolean
 ) => NextApiHandler<T>;
