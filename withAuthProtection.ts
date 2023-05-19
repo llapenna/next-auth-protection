@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth';
 import { GetServerSidePropsContext as Context } from 'next';
 
 import { GetServerSideProps } from './types/getServerSideProps';
+import { ApiHandler } from './types/apiHandler';
 
 class WithAuthProtection {
   /**
@@ -49,6 +50,28 @@ class WithAuthProtection {
     };
   };
 
+  /**
+   * Higher-order function that returns a new `NextApiHandler` function that checks if the user is logged in.
+   * @param handler `NextApiHandler` regular function, with the addition of a `Session` argument. By default, it redirects to the given page if the user is not logged in.
+   * @param redirect Should the function redirect to the given page if the user is not logged in?
+   * @returns A new `NextApiHandler` function that checks if the user is logged in. If not, it redirects to the given page.
+   */
+  api: ApiHandler = (handler, redirect = true) => {
+    return async (req, res) => {
+      const session = await this.getSession(req, res);
+
+      if (!session) {
+        // User is not logged in
+        if (redirect) res.redirect(302, this.to);
+        else res.status(401).end();
+
+        return;
+      }
+
+      // User is logged in, continue to the page. Also add the session to the props
+      handler(req, res, session);
+    };
+  };
 }
 
 export default WithAuthProtection;
