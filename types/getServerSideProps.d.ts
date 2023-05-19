@@ -19,7 +19,7 @@ type ServerSidePropsWithSession<
   context: Context<Params, Preview>,
   session: Session
   // TODO check this ReturnType
-) => ReturnType<ServerProps<Props | {}, Params, Preview>>;
+) => ReturnType<ServerProps<Props | object, Params, Preview>>;
 
 /**
  * Server-side rendering authentication HOF.
@@ -31,4 +31,4 @@ export type GetServerSideProps = <
 >(
   getServerSideProps: ServerSidePropsWithSession<Props, Params, Preview>,
   redirect?: boolean
-) => ServerProps<Props | {}, Params, Preview>;
+) => ServerProps<Props | object, Params, Preview>;
