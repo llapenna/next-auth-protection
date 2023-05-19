@@ -1,9 +1,9 @@
-import type { AuthOptions } from 'next-auth';
-import { getServerSession } from 'next-auth';
-import { GetServerSidePropsContext as Context } from 'next';
+import type { AuthOptions } from "next-auth";
+import { getServerSession } from "next-auth";
+import { GetServerSidePropsContext as Context } from "next";
 
-import { GetServerSideProps } from './types/getServerSideProps';
-import { ApiHandler } from './types/apiHandler';
+import { GetServerSideProps } from "./types/getServerSideProps";
+import { ApiHandler } from "./types/apiHandler";
 
 class WithAuthProtection {
   /**
@@ -19,7 +19,7 @@ class WithAuthProtection {
    * @param res `Response` object
    * @returns Returns a Next-Auth `Session` object or `null`
    */
-  private getSession(req: Context['req'], res: Context['res']) {
+  private getSession(req: Context["req"], res: Context["res"]) {
     return getServerSession(req, res, this.options);
   }
 
