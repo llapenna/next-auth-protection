@@ -16,7 +16,7 @@ type HandlerWithSession<T = any> = (
 ) => ReturnType<NextApiHandler<T>>;
 
 /**
- * API route handler authentication HOC
+ * API route handler authentication HOF.
  */
 export type ApiHandler = <T = any>(
   handler: HandlerWithSession<T>

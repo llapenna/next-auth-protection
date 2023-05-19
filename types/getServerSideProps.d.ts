@@ -23,7 +23,7 @@ type ServerSidePropsWithSession<
 ) => ReturnType<NextGetServerSideProps<Props | {}, Params, Preview>>;
 
 /**
- * Server-side rendering authentication HOC
+ * Server-side rendering authentication HOF.
  */
 export type GetServerSideProps = <
   Props extends AnyObject = AnyObject,
