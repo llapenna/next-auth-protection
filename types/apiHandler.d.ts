@@ -1,9 +1,9 @@
-import type { Session } from 'next-auth';
+import type { Session } from "next-auth";
 import type {
   NextApiHandler,
   NextApiRequest,
   NextApiResponse,
-} from 'next/types';
+} from "next/types";
 
 /**
  * API route handler with `Session` as a third argument.
