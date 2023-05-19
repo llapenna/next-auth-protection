@@ -4,7 +4,8 @@
   "description": "Authentication protection for NextJS pages and routes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "@types/node": "^20.2.1"
   },
   "devDependencies": {
+    "release-it": "^15.10.3",
     "typescript": "^5.0.4"
   }
 }
