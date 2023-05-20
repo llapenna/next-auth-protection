@@ -37,14 +37,11 @@ class WithAuthProtection {
   ) => {
     return async (context) => {
       const session = await this.getSession(context.req, context.res);
-      const redirectProp = redirect ? { redirect: this.to } : undefined;
 
       if (!session) {
         // User is not logged in, return to the login page
-        return {
-          redirect: redirectProp,
-          props: {},
-        };
+        if (redirect) return { redirect: this.to, props: {} };
+        else return { props: {} };
       }
 
       // User is logged in, continue to the page. Also add the session to the props
