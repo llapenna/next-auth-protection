@@ -1,8 +1,11 @@
 {
   "name": "next-auth-protection",
   "version": "0.0.0",
-  "description": "Authentication protection for NextJS pages and routes",
-  "main": "index.js",
+  "description": "Authentication protection for NextJS pages and routes.",
+  "main": "dist/index",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
