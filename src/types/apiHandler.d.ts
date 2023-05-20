@@ -5,6 +5,8 @@ import type {
   NextApiResponse,
 } from "next/types";
 
+import type { Options } from "./utils";
+
 /**
  * API route handler with `Session` as a third argument.
  */
@@ -20,5 +22,5 @@ type HandlerWithSession<T = any> = (
  */
 export type ApiHandler = <T = any>(
   handler: HandlerWithSession<T>,
-  redirect?: boolean
+  { redirect }: Options
 ) => NextApiHandler<T>;

@@ -6,7 +6,7 @@ import type {
 } from "next/types";
 import type { ParsedUrlQuery } from "node:querystring";
 
-import type { AnyObject } from "./utils";
+import type { AnyObject, Options } from "./utils";
 
 /**
  * Server-side props with `Session` as a second argument.
@@ -30,5 +30,5 @@ export type GetServerSideProps = <
   Preview extends PreviewData = PreviewData
 >(
   getServerSideProps: ServerSidePropsWithSession<Props, Params, Preview>,
-  redirect?: boolean
+  { redirect }: Options
 ) => ServerProps<Props | object, Params, Preview>;

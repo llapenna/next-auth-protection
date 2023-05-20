@@ -1,5 +1,7 @@
 import type { Session } from "next-auth";
 
+import type { Options } from "./utils";
+
 /**
  * Generic React component.
  */
@@ -14,5 +16,6 @@ export type Page = <
   Props extends JSX.IntrinsicAttributes = JSX.IntrinsicAttributes
 >(
   Component: Component<Props & { session: Session }>,
-  Fallback: Component
+  Fallback: Component,
+  { redirect }: Options
 ) => React.FC<Props> | null;
