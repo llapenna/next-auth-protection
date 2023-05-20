@@ -40,7 +40,7 @@ class WithAuthProtection {
 
       if (!session) {
         // User is not logged in, return to the login page
-        if (redirect) return { redirect: this.to, props: {} };
+        if (redirect) return { redirect: { destination: this.to }, props: {} };
         else return { props: {} };
       }
 
