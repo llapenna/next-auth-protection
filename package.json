@@ -1,6 +1,6 @@
 {
   "name": "next-auth-protection",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Authentication protection for NextJS pages and routes.",
   "main": "dist/index.js",
   "files": [
