@@ -10,6 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "check-types": "tsc --noEmit",
+    "validate": "npm run lint && npm run check-types",
     "release": "release-it",
     "copy:types": "cp -a ./src/types/ ./dist/types/",
     "build": "tsc && npm run copy:types"
