@@ -9,9 +9,11 @@
     "publish": false
   },
   "git": {
+    "commitMessage": "chore(release): ${version}"
+  },
+  "github": {
     "release": true,
     "releaseName": "${version}",
-    "tokenRef": "GITHUB_TOKEN",
-    "commitMessage": "chore(release): ${version}"
+    "tokenRef": "GITHUB_TOKEN"
   }
 }
