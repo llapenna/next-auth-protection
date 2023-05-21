@@ -33,7 +33,7 @@ class WithAuthProtection {
    */
   public getServerSideProps: GetServerSideProps = (
     getPropsFunction,
-    { redirect = true }
+    { redirect } = { redirect: true }
   ) => {
     return async (context) => {
       const session = await this.getSession(context.req, context.res);
@@ -55,7 +55,7 @@ class WithAuthProtection {
    * @param redirect Should the function redirect to the given page if the user is not logged in?
    * @returns A new `NextApiHandler` function that checks if the user is logged in. If not, it redirects to the given page.
    */
-  public api: ApiHandler = (handler, { redirect = false }) => {
+  public api: ApiHandler = (handler, { redirect } = { redirect: true }) => {
     return async (req, res) => {
       const session = await this.getSession(req, res);
 
@@ -78,7 +78,11 @@ class WithAuthProtection {
    * @param Fallback Fallback component to render while the session is loading.
    * @returns A new React component that checks if the user is logged in. If not, it redirects to the given page.
    */
-  public page: Page = (Component, Fallback, { redirect = false }) => {
+  public page: Page = (
+    Component,
+    Fallback,
+    { redirect } = { redirect: false }
+  ) => {
     return (props) => {
       const router = useRouter();
       const { data: session, status } = useSession();
