@@ -21,5 +21,5 @@ type NextPageWithSession<
 export type Page = <Props extends object = object, InitialProps = Props>(
   Component: NextPageWithSession<Props, InitialProps>,
   Fallback: React.FC,
-  { redirect }: Options
+  { redirect }?: Options
 ) => NextPage<Props, InitialProps>;
