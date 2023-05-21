@@ -33,14 +33,15 @@ class WithAuthProtection {
    */
   public getServerSideProps: GetServerSideProps = (
     getPropsFunction,
-    { redirect } = { redirect: true }
+    { redirectTo } = { redirectTo: undefined }
   ) => {
     return async (context) => {
       const session = await this.getSession(context.req, context.res);
 
       if (!session) {
         // User is not logged in, return to the login page
-        if (redirect) return { redirect: { destination: this.to }, props: {} };
+        if (redirectTo)
+          return { redirect: { destination: redirectTo }, props: {} };
         else return { props: {} };
       }
 
@@ -55,13 +56,16 @@ class WithAuthProtection {
    * @param redirect Should the function redirect to the given page if the user is not logged in?
    * @returns A new `NextApiHandler` function that checks if the user is logged in. If not, it redirects to the given page.
    */
-  public api: ApiHandler = (handler, { redirect } = { redirect: true }) => {
+  public api: ApiHandler = (
+    handler,
+    { redirectTo } = { redirectTo: undefined }
+  ) => {
     return async (req, res) => {
       const session = await this.getSession(req, res);
 
       if (!session) {
         // User is not logged in
-        if (redirect) res.redirect(302, this.to);
+        if (redirectTo) res.redirect(302, redirectTo);
         else res.status(401).end();
 
         return;
@@ -81,7 +85,7 @@ class WithAuthProtection {
   public page: Page = (
     Component,
     Fallback,
-    { redirect } = { redirect: false }
+    { redirectTo } = { redirectTo: undefined }
   ) => {
     return (props) => {
       const router = useRouter();
@@ -89,7 +93,7 @@ class WithAuthProtection {
 
       if (status === "loading") return <Fallback></Fallback>;
       else if (status === "unauthenticated" || session === null) {
-        if (redirect) router.push(this.to);
+        if (redirectTo) router.push(redirectTo);
         return null;
       }
 
