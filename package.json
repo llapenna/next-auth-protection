@@ -21,7 +21,13 @@
     "type": "git",
     "url": "git+https://github.com/llapenna/next-auth-protection.git"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "nextjs",
+    "next-auth",
+    "authentication",
+    "utility"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {

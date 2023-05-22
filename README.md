@@ -6,7 +6,7 @@ Authentication protection for [**Next.JS**](https://nextjs.org/) pages and route
 - Protect pages
 - Protect pages before rendering
 
-## Table of contents 📋
+## Table of contents
 
 - [📝 Documentation](#documentation)
 - [🚀 Features](#features)
