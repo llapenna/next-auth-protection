@@ -16,7 +16,7 @@ Authentication protection for [NextJS](https://nextjs.org/) pages and routes, po
 
 ## Documentation
 
-To read the full documentation, visit this [document](https://github.com/llapenna/next-auth-protection/tree/main/docs/README.md).
+To read the full documentation, visit this [document](https://github.com/llapenna/next-auth-protection/tree/main/docs).
 
 ## Features
 
