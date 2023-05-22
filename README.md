@@ -33,7 +33,7 @@ To start using Next Auth Protection, install the package:
 npm install next-auth-protection
 
 # yarn
-yarn add next-auth-protection◊
+yarn add next-auth-protection
 ```
 
 ## Usage
