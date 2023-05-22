@@ -16,6 +16,8 @@ Authentication protection for [NextJS](https://nextjs.org/) pages and routes, po
 
 ## Documentation
 
+To read the full documentation, visit this [document](https://github.com/llapenna/next-auth-protection/tree/main/docs/README.md).
+
 ## Features
 
 - Fastest way to add authentication protection: with just a few lines of code you can protect every page and API route of your application!
