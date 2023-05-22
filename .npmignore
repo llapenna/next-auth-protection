@@ -1,0 +1,9 @@
+.github
+
+node_modules
+
+.eslintignore
+.prettierignore
+.eslintrc.js
+.prettierrc.js
+.release-it.json
