@@ -80,3 +80,4 @@ const handler = authProtection.api(async (req, res) => {
 });
 ```
 
+## Common Problems
