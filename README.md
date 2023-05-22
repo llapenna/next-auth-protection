@@ -36,4 +36,47 @@ npm install next-auth-protection
 yarn add next-auth-protection◊
 ```
 
+## Usage
+
+To start using Next Auth Protection, follow these steps:
+
+1. Initialize NextAuth.js:
+Make sure you have at least one provider set up and working in your project. If you don't, follow the [official documentation](https://next-auth.js.org/getting-started/example) to get started. It's suggested to wrap your application with the `<SessionProvider>` component, so you can use the `page` protector. How to configure the Provider [here](https://next-auth.js.org/getting-started/example#configure-shared-session-state). This is because `next-auth-protection` uses the `useSession` hook to check if the user is authenticated.
+
+2. Create your `WithAuthProtection` instance 🛡️
+
+Using your NextAuth.js configuration object, create a new instance of `WithAuthProtection`:
+
+```js
+import { WithAuthProtection } from 'next-auth-protection';
+
+const authProtection = new WithAuthProtection(NEXTAUTH_OPTIONS);
+```
+
+3. Protect your routes 🔐
+
+You can protect your routes in three ways:
+
+```js
+const authProtection = new WithAuthProtection(NEXTAUTH_OPTIONS);
+
+// 1 - protect pages directly
+const MyPage = authProtection.page(() => {
+  return <h1>My page</h1>;
+});
+
+// 2 - protect pages before rendering
+export const getServerSideProps = authProtection.getServerSideProps(() => {
+  return {
+    props: {
+      message: 'Hello world',
+    },
+  };
+});
+
+// 3 - protect API routes
+const handler = authProtection.api(async (req, res) => {
+  res.status(200).json({ message: 'Hello world' });
+});
+```
 
