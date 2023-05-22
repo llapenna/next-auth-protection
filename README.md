@@ -42,7 +42,7 @@ To start using Next Auth Protection, follow these steps:
 
 1. Initialize NextAuth.js 🔌
 
-Make sure you have at least one provider [set up and working](https://next-auth.js.org/getting-started/example) in your project and you're [wrapping your application](https://next-auth.js.org/getting-started/example#configure-shared-session-state) with the `<SessionProvider>` component (needed in the package's `page` protector).
+Make sure you have at least one provider [set up and working](https://next-auth.js.org/getting-started/example) in your project and you're [wrapping your application](https://next-auth.js.org/getting-started/example#configure-shared-session-state) with the `<SessionProvider>` component (needed for the package's `page` protector).
 
 2. Create your `WithAuthProtection` instance 🛡️
 
