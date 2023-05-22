@@ -1,6 +1,6 @@
 # Next Auth Protection 🔐
 
-Authentication protection for [NextJS](https://nextjs.org/) pages and routes, powered by [NextAuth.js](https://next-auth.js.org/) 🚀
+Authentication protection for [**Next.JS**](https://nextjs.org/) pages and routes, powered by [**NextAuth.js**](https://next-auth.js.org/) 🚀
 
 - Protect API routes
 - Protect pages
@@ -42,7 +42,7 @@ To start using Next Auth Protection, follow these steps:
 
 1. Initialize NextAuth.js 🔌
 
-Make sure you have at least one provider [set up and working](https://next-auth.js.org/getting-started/example) in your project and you're [wrapping your application](https://next-auth.js.org/getting-started/example#configure-shared-session-state) with the `<SessionProvider>` component (needed in the `page` protector).
+Make sure you have at least one provider [set up and working](https://next-auth.js.org/getting-started/example) in your project and you're [wrapping your application](https://next-auth.js.org/getting-started/example#configure-shared-session-state) with the `<SessionProvider>` component (needed in the package's `page` protector).
 
 2. Create your `WithAuthProtection` instance 🛡️
 
@@ -80,5 +80,7 @@ const handler = authProtection.api(async (req, res) => {
   res.status(200).json({ message: 'Hello world' });
 });
 ```
+
+4. Optional: customize the redirect behavior 🚦
 
 ## Common Problems
