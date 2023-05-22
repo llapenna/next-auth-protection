@@ -22,5 +22,5 @@ type HandlerWithSession<T = any> = (
  */
 export type ApiHandler = <T = any>(
   handler: HandlerWithSession<T>,
-  { redirect }?: Options
+  options?: Options
 ) => NextApiHandler<T>;

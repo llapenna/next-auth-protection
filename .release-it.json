@@ -13,7 +13,6 @@
   },
   "github": {
     "release": true,
-    "releaseName": "${version}",
-    "tokenRef": "GITHUB_TOKEN"
+    "releaseName": "${version}"
   }
 }

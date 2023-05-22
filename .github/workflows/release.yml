@@ -1,7 +1,7 @@
 name: "Release"
 # TODO automatize this on every main branch merge
 on:
-  pull_request:
+  push:
     branches:
       - main
 jobs:

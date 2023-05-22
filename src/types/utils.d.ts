@@ -4,8 +4,8 @@
 export type AnyObject = { [key: string]: any };
 
 /**
- * Generic options for Higher Order Functions.
+ * Generic options for Higher Order Functions/Components.
  */
 export type Options = {
-  redirect?: boolean;
+  redirectTo?: string;
 };

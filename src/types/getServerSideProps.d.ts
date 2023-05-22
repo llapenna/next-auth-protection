@@ -30,5 +30,5 @@ export type GetServerSideProps = <
   Preview extends PreviewData = PreviewData
 >(
   getServerSideProps: ServerSidePropsWithSession<Props, Params, Preview>,
-  { redirect }?: Options
+  options?: Options
 ) => ServerProps<Props | object, Params, Preview>;
